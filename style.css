@@ -1,0 +1,20 @@
+body, html {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wordBox {
+    background-color: antiquewhite;
+    display: grid;
+    height: 100%;
+}
+
+.words {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+}
