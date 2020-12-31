@@ -7,8 +7,30 @@ body, html {
     padding: 0;
 }
 
+header {
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    font-family: "Bell MT", serif;
+    background-color: #03003d;
+    padding: 5vh;
+    color: white;
+
+}
+
+.downloadBtn {
+    background-color: greenyellow;
+    padding: 1vh;
+
+}
+
+
+#container {
+    padding: 10%;
+    margin: auto;
+}
+
 .wordBox {
-    background-color: antiquewhite;
     display: grid;
     height: 100%;
 }
@@ -18,3 +40,4 @@ body, html {
     height: 100vh;
     margin: auto;
 }
+

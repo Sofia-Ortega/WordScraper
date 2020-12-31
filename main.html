@@ -5,13 +5,39 @@
     <title>Common Words</title>
 
     <link rel="stylesheet" href="style.css">
+    <link href="words/frenchWords.txt">
+
 </head>
 <body>
+    <header>
+        <h1>Top 1000 Words</h1>
+    </header>
 
-    <div class="wordBox">
-        <object class="words" type="text/plain" data="words/frenchWords.txt" >
-        </object>
+
+
+
+    <div class="containerBtn">
+        <a href="words/frenchWords.txt" download>
+            <button  class="downloadBtn" type="button">Download</button>
+        </a>
     </div>
+
+    <div id="container">
+        <button type="button" onclick="getFrenchWords()">Click me</button>
+
+        <div id="words"></div>
+    </div>
+
+    <script>
+
+
+    </script>
+
+
+<!--    <div class="wordBox">-->
+<!--        <object class="words" type="text/plain" data="words/frenchWords.txt" >-->
+<!--        </object>-->
+<!--    </div>-->
 
 
 </body>
