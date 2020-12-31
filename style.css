@@ -19,16 +19,18 @@ header {
 }
 
 .downloadBtn {
-    background-color: greenyellow;
-    padding: 1vh;
+    background-color: #a4f3ff;
+    padding: 10vh;
+    font-size: 25px;
+    font-weight: bold;
+    border: 5px solid black;
+    border-radius: 15px;
 
+    float: left;
+    margin: 10px;
 }
 
 
-#container {
-    padding: 10%;
-    margin: auto;
-}
 
 .wordBox {
     display: grid;
