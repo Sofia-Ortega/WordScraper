@@ -1,4 +1,4 @@
-var fs = require('fs');
+//var fs = require('fs');
 var filename = "words/frenchWords.txt"
 
 
