@@ -17,6 +17,7 @@ const http = require('http');
 
 const express = require('express');
 const app = express();
+var server = http.Server(app);
 
 const port = 3000;
 
@@ -24,7 +25,11 @@ app.get('/', (req, res) => {
     res.sendFile('public/main.html', {root: __dirname});
 })
 
-app.listen(port, () => console.log(`Listening on port http:localhost:${port}`))
+//need to go to http://localhost:3000/main.html
+// app.use(express.static('public'));
+
+
+server.listen(port, () => console.log(`Listening on port http://localhost:${port}`))
 
 
 
