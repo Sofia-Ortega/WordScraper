@@ -63,5 +63,5 @@ async function frenchWords() {
 
 }
 
-//practice();
-frenchWords();
+practice();
+//frenchWords();
