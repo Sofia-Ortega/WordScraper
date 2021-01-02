@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="style.css">
     <link href="./words/frenchWords.txt">
-    <script src="randomFunc.js"></script>
+    <script src="functions/randomFunc.js"></script>
 
 
 
@@ -29,8 +29,15 @@
         <button type="button" class="downloadBtn" onclick="clicking()">Click me</button>
     </div>
 
-    <div id="container">
-        <button type="button" class="downloadBtn" onclick="clicking()">Webscrape</button>
+    <div id="form">
+        <form action="" method="post" >
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <input type="submit" value="Submit" class="downloadBtn">
+
+        </form>
     </div>
 
     <script>

@@ -43,3 +43,7 @@ header {
     margin: auto;
 }
 
+
+.form {
+    clear: both;
+}

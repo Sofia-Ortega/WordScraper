@@ -19,6 +19,7 @@ const express = require('express');
 const app = express();
 var server = http.Server(app);
 
+
 const port = 3000;
 
 app.use(express.static('public'));
@@ -27,6 +28,10 @@ app.get('/', (req, res) => {
     res.sendFile('public/main.html', {root: __dirname});
 })
 
+app.post('/', (req, res) => {
+    console.log('Received')
+    res.send('thanks')
+})
 //need to go to http://localhost:3000/main.html
 
 
