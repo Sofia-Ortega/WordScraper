@@ -1,42 +1,39 @@
 
 
 const http = require('http');
-
-// const hostname = '127.0.0.1';
-// const port = 3000;
-//
-// const server = http.createServer((req, res) => {
-//     res.statusCode = 200;
-//     res.setHeader('Content-Type', 'text/plain');
-//     res.end('hello World');
-// });
-//
-// server.listen(port, hostname, () => {
-//     console.log(`Server running at http://${hostname}:${port}`);
-// })
-
 const express = require('express');
+
+const bodyParser = require('body-parser')
 const app = express();
-var server = http.Server(app);
+const server = http.Server(app);
 
+const scraper = require("./webscrape/getFrenchWords")
 
-const port = 3000;
+const PORT = 3000;
 
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.sendFile('public/main.html', {root: __dirname});
 })
 
-app.post('/', (req, res) => {
-    console.log('Received')
-    res.send('thanks')
+app.post('/contact', (req, res) => {
+
+    console.log('Processing')
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    console.log(firstName, lastName)
+    res.end()
 })
-//need to go to http://localhost:3000/main.html
 
+app.post('/scraper', (req, res) => {
+    console.log('testing 1, 2')
+    scraper.practice();
+    res.end();
+})
 
-
-server.listen(port, () => console.log(`Listening on port http://localhost:${port}`))
+server.listen(PORT, () => console.log(`Listening on port http://localhost:${PORT}`))
 
 
 

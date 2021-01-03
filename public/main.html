@@ -16,40 +16,33 @@
         <h1>Top 1000 Words</h1>
     </header>
 
-
-
-
     <div class="containerBtn">
         <a href="words/frenchWords.txt" download>
             <button  class="downloadBtn" type="button">Download</button>
         </a>
     </div>
 
-    <div id="containerBtn">
+    <div class="containerBtn">
         <button type="button" class="downloadBtn" onclick="clicking()">Click me</button>
     </div>
 
-    <div id="form">
-        <form action="" method="post" >
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" name="fname"><br><br>
-            <label for="lname">Last name:</label>
-            <input type="text" id="lname" name="lname"><br><br>
-            <input type="submit" value="Submit" class="downloadBtn">
 
+    <div class="containerBtn">
+        <form action="/scraper" method="POST">
+            <input placeholder="First Name" name="firstName"/>
+            <button type="submit" class="downloadBtn">Go to scraper</button>
         </form>
+
+
     </div>
 
-    <script>
-
-
-    </script>
-
-
-<!--    <div class="wordBox">-->
-<!--        <object class="words" type="text/plain" data="words/frenchWords.txt" >-->
-<!--        </object>-->
-<!--    </div>-->
+    <div id="form">
+        <form action="/contact" method="POST" >
+            <input placeholder="First Name" name="firstName"/>
+            <input placeholder="Last Name" name="lastName"/>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
 
 </body>

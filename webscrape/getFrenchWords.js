@@ -63,5 +63,5 @@ async function frenchWords() {
 
 }
 
-practice();
+exports.practice = practice;
 //frenchWords();
