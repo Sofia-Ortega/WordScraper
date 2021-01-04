@@ -11,6 +11,8 @@ const info = require('./Info.js');
 
 const PORT = process.env.port || 3000;
 
+var words = [];
+
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.static('public'));
 
@@ -41,8 +43,11 @@ app.get('/test', () => res.send('test successful'));
 
 app.post('/scraper', (req, res) => {
     //console.log(req.body)
-    //scraper.practice();
-    console.log(req.body)
+    let scrape = scraper.scrapeWords();
+    scrape.then((i) => console.log(i));
+
+
+    //console.log(req.body)
     res.end();
 })
 

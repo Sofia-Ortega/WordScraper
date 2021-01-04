@@ -14,9 +14,10 @@ async function practice() {
     const result = await request.get("http://codingwithstefan.com/table-example");
     const $ = cheerio.load(result);
     let str = "";
-    $("body > table > tbody > tr").each((index, element) => {
+    $("body > table > tbody > tr").each( async (index, element) => {
         str = $(element).text();
-        console.log(str)
+        return await str;
+        //console.log(str)
 
     });
 }
@@ -44,7 +45,9 @@ async function frenchWords() {
             mini = {}
         }
     })
-    console.log(data)
+
+    return data;
+    //console.log(data)
 
     //write csv of stored french words data
     // const createCsvWriter = require('csv-writer').createObjectCsvWriter;
@@ -63,6 +66,10 @@ async function frenchWords() {
 
 }
 
-//frenchWords();
-exports.practice = practice;
+
+// let word = frenchWords();
+// console.log(word) //pending
+// word.then((i) => {console.log(i)})
+
+exports.scrapeWords = frenchWords;
 //frenchWords();
