@@ -30,7 +30,23 @@
 
     <div class="formContainer">
         <form action="/scraper" method="POST">
-            <input class="form" placeholder="First Name" name="firstName"/>
+            <div class="selectFile">
+                <label for="fileType" id="fileType">Choose a file type:</label>
+                <select name="fileType">
+                    <option value=".txt">Text File</option>
+                    <option value=".json">JSON File</option>
+                    <option value=".csv">CSV File</option>
+                </select>
+            </div>
+            <div class="selectFile">
+                <label for="language" id="language">Choose a language:</label>
+                <select name="language">
+                    <option value="french">French</option>
+                </select>
+            </div>
+
+            <br/>
+
             <button type="submit" class="submitBtn">Go to scraper</button>
         </form>
     </div>

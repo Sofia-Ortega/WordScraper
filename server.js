@@ -42,7 +42,7 @@ app.get('/test', () => res.send('test successful'));
 app.post('/scraper', (req, res) => {
     //console.log(req.body)
     //scraper.practice();
-    console.log(req.body.firstName)
+    console.log(req.body)
     res.end();
 })
 
