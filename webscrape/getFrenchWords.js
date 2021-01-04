@@ -44,24 +44,25 @@ async function frenchWords() {
             mini = {}
         }
     })
-    //console.log(data)
+    console.log(data)
 
     //write csv of stored french words data
-    const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-    const csvWriter = createCsvWriter({
-        path: 'frenchWords.csv',
-        header: [
-            {id: 'number'},
-            {id: 'french'},
-            {id: 'english'}
-        ]
-    })
-
-    csvWriter
-        .writeRecords(data)
-        .then(() => console.log('Csv file successfully created'));
+    // const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+    // const csvWriter = createCsvWriter({
+    //     path: 'frenchWords.csv',
+    //     header: [
+    //         {id: 'number'},
+    //         {id: 'french'},
+    //         {id: 'english'}
+    //     ]
+    // })
+    //
+    // csvWriter
+    //     .writeRecords(data)
+    //     .then(() => console.log('Csv file successfully created'));
 
 }
 
+//frenchWords();
 exports.practice = practice;
 //frenchWords();

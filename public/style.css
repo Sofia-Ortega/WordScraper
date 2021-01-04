@@ -25,10 +25,11 @@ header {
     font-weight: bold;
     border: 5px solid black;
     border-radius: 15px;
-
+    outline: none;
     float: left;
     margin: 10px;
 }
+
 
 
 
@@ -43,7 +44,27 @@ header {
     margin: auto;
 }
 
-
 .form {
+    height: 4.5em;
+    font-size: 14pt;
+    text-align: center;
+    border: none;
+    border-top: 3px solid #e8bb42;
+    border-bottom: 3px solid #e8bb42;
+}
+
+.submitBtn {
+    padding: 1em;
+    height: 5em;
+    font-size: 14pt;
+    text-align: center;
+    font-weight: bold;
+    background: #03003d;
+    color: white;
+    border-radius: 15px;
+}
+
+.formContainer {
     clear: both;
+    padding: 10vh;
 }
