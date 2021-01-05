@@ -46,12 +46,12 @@ app.post('/test', (req, res) => {
 
 app.post('/scraper', (req, res) => {
     //console.log(req.body)
+    console.log('creating wordFile.txt')
     let scrape = scraper.scrapeWords();
     scrape
         .then((i) => {
-
+            console.log(i);
             createFile.text(i);
-
         })
         .catch(err => console.log(err))
 
