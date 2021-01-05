@@ -5,13 +5,13 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 const server = http.Server(app);
+const fs = require('fs');
 
 const scraper = require("./webscrape/getFrenchWords");
 const info = require('./Info.js');
+const createFile = require("./createFiles/createText");
 
 const PORT = process.env.port || 3000;
-
-var words = [];
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.static('public'));
@@ -39,13 +39,21 @@ app.post('/contact', (req, res) => {
     res.end()
 })
 
-app.get('/test', () => res.send('test successful'));
+app.post('/test', (req, res) => {
+    console.log('sucess successful');
+
+})
 
 app.post('/scraper', (req, res) => {
     //console.log(req.body)
     let scrape = scraper.scrapeWords();
-    scrape.then((i) => console.log(i));
+    scrape
+        .then((i) => {
 
+            createFile.text(i);
+
+        })
+        .catch(err => console.log(err))
 
     //console.log(req.body)
     res.end();
