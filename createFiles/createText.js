@@ -2,7 +2,7 @@ const fs = require('fs');
 const info = require('../Info.js');
 
 
-function createText(data) {
+async function createText(data) {
     //takes in json data and creates a wordFile w/ data
     let string = "";
     //data = JSON.stringify(data);
@@ -12,10 +12,9 @@ function createText(data) {
         string += data[i].french + "  -------  " + data[i].english + '\n';
     }
 
-    fs.writeFile( 'wordFile.txt', string, (err) => {
+    await fs.writeFile( 'wordFile.txt', string, (err) => {
         if (err) throw err;
     })
-    //return true;
 }
 
 

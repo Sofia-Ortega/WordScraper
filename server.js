@@ -13,51 +13,63 @@ const createFile = require("./createFiles/createText");
 
 const PORT = process.env.port || 3000;
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.json());
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.sendFile('public/main.html', {root: __dirname});
 })
 
-app.get('/landing', (req, res) => {
+app.post('/landing', (req, res) => {
     res.sendFile('public/scraper.html', {root: __dirname});
 })
 
 
-app.get('/api/myjson', (req, res) => {
-    res.json(info);
+app.get('/api/words/:number', (req, res) => {
+    console.log(req.params.number);
+    res.json(info.filter(word => word.number === parseInt(req.params.number)));
 })
 
 app.post('/contact', (req, res) => {
 
     console.log('Processing')
-    var firstName = req.body.firstName;
-    var lastName = req.body.lastName;
-    info.push({firstName, lastName})
-    console.log(info);
-    res.end()
-})
-
-app.post('/test', (req, res) => {
-    console.log('sucess successful');
+    console.log(req.body)
+    // var firstName = req.body.firstName;
+    // var lastName = req.body.lastName;
+    // info.push({firstName, lastName})
+    // console.log(info);
+    res.sendFile('wordFile.txt', {root: __dirname});
 
 })
+
+
 
 app.post('/scraper', (req, res) => {
     //console.log(req.body)
-    console.log('creating wordFile.txt')
+    console.log('creating wordFile.txt');
+    res.sendFile('public/scraper.html', {root: __dirname});
+
     let scrape = scraper.scrapeWords();
     scrape
         .then((i) => {
-            console.log(i);
-            createFile.text(i);
+            createFile.text(i)
+                .then(() => {
+                    console.log('success');
+                    res.send(true)
+                    //res.sendFile('wordFile.txt', {root: __dirname});
+
+                })
+                .catch(err => console.log(err));
         })
         .catch(err => console.log(err))
+    console.log()
 
-    //console.log(req.body)
-    res.end();
+
 })
+
+
+
 
 server.listen(PORT, () => console.log(`Listening on port http://localhost:${PORT}`))
 
