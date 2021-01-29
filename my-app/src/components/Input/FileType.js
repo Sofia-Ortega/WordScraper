@@ -6,6 +6,11 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiFilledInput-input': {
+      padding: '30px 8vw 10px'
+    }
+  },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
@@ -18,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 export default function FileType({onFileChange, fileType}) {
   const classes = useStyles();
   return(
-    <div>
+    <div className={classes.root}>
       <FormControl variant="filled" className={classes.formControl}>
         <InputLabel id="demo-simple-select-label">FileType</InputLabel>
         <Select

@@ -1,25 +1,34 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
+
 const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiFilledInput-input': {
+        padding: '30px 8vw 10px',
+
+    }
+  },
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: '120px',
+
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
+
 }));
 
 export default function Language({onLangChange, language}) {
   const classes = useStyles();
 
   return(
-    <div>
+    <div className={classes.root}>
       <FormControl variant="filled" className={classes.formControl}>
         <InputLabel id="demo-simple-select-label">Language</InputLabel>
         <Select
