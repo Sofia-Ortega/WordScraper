@@ -15,10 +15,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function UserInput({handleChange, language}) {
+export default function Language({onLangChange, language}) {
   const classes = useStyles();
-  //const [language, setLanguage] = React.useState('');
-  //const [fileType, setFileType] = React.useState('');
+
   return(
     <div>
       <FormControl variant="filled" className={classes.formControl}>
@@ -27,7 +26,7 @@ export default function UserInput({handleChange, language}) {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={language}
-          onChange={handleChange}
+          onChange={onLangChange}
         >
           <MenuItem value={'french'}>French</MenuItem>
           <MenuItem value={'german'}>German</MenuItem>

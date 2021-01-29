@@ -15,9 +15,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FileType() {
+export default function FileType({onFileChange, fileType}) {
   const classes = useStyles();
-  const [fileType, setFileType] = React.useState('');
   return(
     <div>
       <FormControl variant="filled" className={classes.formControl}>
@@ -26,11 +25,10 @@ export default function FileType() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={fileType}
-          onChange={(event) => console.log('fileType:', event.target.value)}
+          onChange={onFileChange}
         >
           <MenuItem value={'csv'}>csv</MenuItem>
           <MenuItem value={'txt'}>txt</MenuItem>
-          <MenuItem value={'none'}>Null</MenuItem>
         </Select>
       </FormControl>
     </div>
