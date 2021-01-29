@@ -15,10 +15,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function UserInput({handleChange}) {
+export default function UserInput({handleChange, language}) {
   const classes = useStyles();
-  const [language, setLanguage] = React.useState('');
-  const [fileType, setFileType] = React.useState('');
+  //const [language, setLanguage] = React.useState('');
+  //const [fileType, setFileType] = React.useState('');
   return(
     <div>
       <FormControl variant="filled" className={classes.formControl}>

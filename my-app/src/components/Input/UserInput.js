@@ -9,16 +9,28 @@ const btnStyle = {
 }
 
 
-export default function UserInput({handleChange}) {
+
+
+export default function UserInput() {
+  const [language, setLanguage] = React.useState('');
+  const handleChange = (event) => {
+    //console.log(event.target.value)
+    setLanguage(event.target.value);
+  }
+
+  const getData = () => {
+    console.log(language);
+  }
+
   return(
     <div>
-     <Language handleChange={handleChange}/>
+     <Language handleChange={handleChange} language={language}/>
      <FileType/>
      <div style={btnStyle}>
        <Button
          variant="contained"
          color="primary"
-         onClick={() => {console.log('that tickles')}}
+         onClick={() => {getData()}}
        >
          Go!
        </Button>
