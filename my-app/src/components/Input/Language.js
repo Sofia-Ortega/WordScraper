@@ -11,16 +11,14 @@ const useStyles = makeStyles((theme) => ({
     // '& .MuiFilledInput-input': {
     //     padding: '30px 8vw 10px',
     // },
-
-    margin: 'auto',
-    width: '50%',
-    padding: '10px',
-    border: '3px solid green',
+    //display: 'block',
+    //margin: '0 auto',
+    // width: '12.5vw',
 
 
   },
   formControl: {
-    //margin: theme.spacing(1),
+    margin: theme.spacing(1),
     minWidth: '120px',
 
   },

@@ -9,10 +9,12 @@ const btnStyle = {
 }
 const center = {
   // marginLeft: '12.5vw',
+  display: 'block',
   margin: 'auto',
-  width: '50%',
-  border: '3px solid green',
-  padding: '10px'
+  //width: '12.5vw',
+
+
+
 }
 
 
@@ -34,14 +36,15 @@ export default function UserInput() {
   }
 
   return(
-    <div style={center}>
+    <div >
      <Language onLangChange={onLangChange} language={language}/>
      <FileType onFileChange={onFileChange} fileType={fileType}/>
-     <div style={center}>
+     <div >
        <Button
          variant="contained"
          color="primary"
          onClick={() => {getData()}}
+         style={center}
        >
          Go!
        </Button>

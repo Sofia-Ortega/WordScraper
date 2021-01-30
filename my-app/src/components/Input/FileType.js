@@ -7,12 +7,14 @@ import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& .MuiFilledInput-input': {
-      padding: '30px 8vw 10px'
-    },
-    margin: 'auto',
-    width: '50%',
-    padding: '10px'
+    // '& .MuiFilledInput-input': {
+    //   padding: '30px 8vw 10px'
+    // },
+    //display: 'block',
+    margin: '0 auto',
+
+
+
   },
 
   formControl: {
@@ -27,19 +29,21 @@ const useStyles = makeStyles((theme) => ({
 export default function FileType({onFileChange, fileType}) {
   const classes = useStyles();
   return(
-    <div className={classes.root}>
-      <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">FileType</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={fileType}
-          onChange={onFileChange}
-        >
-          <MenuItem value={'csv'}>csv</MenuItem>
-          <MenuItem value={'txt'}>txt</MenuItem>
-        </Select>
-      </FormControl>
+    <div >
+      <div className={classes.root}>
+        <FormControl variant="filled" className={classes.formControl}>
+          <InputLabel id="demo-simple-select-label">FileType</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={fileType}
+            onChange={onFileChange}
+          >
+            <MenuItem value={'csv'}>csv</MenuItem>
+            <MenuItem value={'txt'}>txt</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
     </div>
   )
 }
