@@ -2,12 +2,18 @@ import React from 'react';
 import Language from './Language';
 import FileType from './FileType';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
+
 
 const btnStyle = {
   padding: '10px',
 }
-
+const center = {
+  // marginLeft: '12.5vw',
+  margin: 'auto',
+  width: '50%',
+  border: '3px solid green',
+  padding: '10px'
+}
 
 
 export default function UserInput() {
@@ -28,10 +34,10 @@ export default function UserInput() {
   }
 
   return(
-    <div>
+    <div style={center}>
      <Language onLangChange={onLangChange} language={language}/>
      <FileType onFileChange={onFileChange} fileType={fileType}/>
-     <div style={btnStyle}>
+     <div style={center}>
        <Button
          variant="contained"
          color="primary"

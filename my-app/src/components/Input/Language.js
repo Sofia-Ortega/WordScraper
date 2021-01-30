@@ -8,13 +8,19 @@ import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& .MuiFilledInput-input': {
-        padding: '30px 8vw 10px',
+    // '& .MuiFilledInput-input': {
+    //     padding: '30px 8vw 10px',
+    // },
 
-    }
+    margin: 'auto',
+    width: '50%',
+    padding: '10px',
+    border: '3px solid green',
+
+
   },
   formControl: {
-    margin: theme.spacing(1),
+    //margin: theme.spacing(1),
     minWidth: '120px',
 
   },
