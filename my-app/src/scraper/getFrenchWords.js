@@ -72,11 +72,11 @@ async function frenchWords() {
 }
 
 
-let word = frenchWords();
-console.log(word) //pending
-word.then((i) => {console.log(i)})
+// let word = frenchWords();
+// console.log(word) //pending
+// word.then((i) => {console.log(i)})
 
 //practice();
 
 
-//exports.scrapeWords = frenchWords;
+exports.scrapeWords = frenchWords;
