@@ -16,8 +16,9 @@ async function practice() {
     let str = "";
     $("body > table > tbody > tr").each( async (index, element) => {
         str = $(element).text();
-        return await str;
         //console.log(str)
+        return await str;
+
 
     });
 }
@@ -29,8 +30,10 @@ async function frenchWords() {
     const $ = cheerio.load(result);
     let str = "";
     let mini = {};
-    $("#post-34 > div.post-inner.thin > div > table > tbody > tr > td").each((index, element) => {
+    //#post-34 > div > div > table > tbody > tr:nth-child(2) > td:nth-child(1)
+    $("#post-34 > div > div > table > tbody > tr > td").each((index, element) => {
         //for each element, place in mini dict w appropriate id
+        //console.log('within the loop')
         str += $(element).text();
         str += " "
         if((index % 3) === 0) {
@@ -41,11 +44,13 @@ async function frenchWords() {
         }
         if((index % 3) === 2) {
             mini.english = $(element).text();
+            //console.log(mini)
             data.push(mini);
             mini = {}
         }
     })
 
+    //console.log(data)
     return data;
     //console.log(data)
 
@@ -67,9 +72,11 @@ async function frenchWords() {
 }
 
 
-// let word = frenchWords();
-// console.log(word) //pending
-// word.then((i) => {console.log(i)})
+let word = frenchWords();
+console.log(word) //pending
+word.then((i) => {console.log(i)})
 
-exports.scrapeWords = frenchWords;
-//frenchWords();
+//practice();
+
+
+//exports.scrapeWords = frenchWords;

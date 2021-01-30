@@ -41,6 +41,7 @@ export default function FileType({onFileChange, fileType}) {
           >
             <MenuItem value={'csv'}>csv</MenuItem>
             <MenuItem value={'txt'}>txt</MenuItem>
+            <MenuItem value={'json'}>json</MenuItem>
           </Select>
         </FormControl>
       </div>

@@ -4,26 +4,19 @@ import FileType from './FileType';
 import Button from '@material-ui/core/Button';
 
 
-const btnStyle = {
-  padding: '10px',
-}
 const center = {
   // marginLeft: '12.5vw',
   display: 'block',
   margin: 'auto',
   //width: '12.5vw',
 
-
-
 }
-
 
 export default function UserInput() {
   const [language, setLanguage] = React.useState('');
   const [fileType, setFileType] = React.useState('');
 
   const onLangChange = (e) => {
-    //console.log(event.target.value)
     setLanguage(e.target.value);
   }
 
