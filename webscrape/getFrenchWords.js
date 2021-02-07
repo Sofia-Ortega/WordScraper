@@ -30,7 +30,6 @@ async function frenchWords() {
     const $ = cheerio.load(result);
     let str = "";
     let mini = {};
-    //#post-34 > div > div > table > tbody > tr:nth-child(2) > td:nth-child(1)
     $("#post-34 > div > div > table > tbody > tr > td").each((index, element) => {
         //for each element, place in mini dict w appropriate id
         //console.log('within the loop')

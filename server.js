@@ -4,6 +4,7 @@ const express = require('express');
 
 const bodyParser = require('body-parser')
 const app = express();
+cors = require("cors");
 const server = http.Server(app);
 const fs = require('fs');
 
@@ -11,14 +12,16 @@ const scraper = require("./webscrape/getFrenchWords");
 const info = require('./Info.js');
 const createFile = require("./createFiles/createText");
 
-const PORT = process.env.port || 3000;
+const PORT = process.env.port || 9000;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.static('public'));
+app.use(cors())
 
 app.get('/', (req, res) => {
-    res.sendFile('public/main.html', {root: __dirname});
+    //res.sendFile('public/main.html', {root: __dirname});
+    res.send({message: 'we did it!'})
 })
 
 app.post('/landing', (req, res) => {
