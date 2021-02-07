@@ -1,38 +1,43 @@
+import React from 'react';
+import Axios from "axios";
 import './App.css';
 import Header from './components/Header'
 import UserInput from "./components/Input/UserInput";
 import Blurb from './components/Blurb'
-import Words from './components/Words'
-import React from 'react';
-import Axios from 'axios';
+import Words from './components/Scraper/Words'
+
+
 
 
 function App() {
-  // const [display, setDisplay] = React.useState(false);
-  //
-  // function changeDisplay() {
-  //   setDisplay(!display);
-  // }
+  const [display, setDisplay] = React.useState(false);
+  const [data, setData] = React.useState('');
 
-  Axios({
-    method: "GET",
-    url: "http://localhost:9000/",
-    headers: {
-      "Content-Type": "application/json"
-    }
-  }).then(res => {
-    console.log(res.data.message)
-  });
+  function changeDisplay() {
+    setDisplay(!display);
+  }
 
+  function getWords() {
+    Axios({
+      method: "GET",
+      url: "http://localhost:9000/hello",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(res => {
+      setData(res.data.message);
+    });
+  }
 
 
   return (
     <div className="App">
-      {/*<Header/>*/}
-      {/*<Blurb/>*/}
-      {/*<UserInput changeDisplay={changeDisplay}/>*/}
-      {/*<Words display={display} />*/}
-      <p>Testing 1 2</p>
+      <Header/>
+      <Blurb/>
+      <UserInput changeDisplay={changeDisplay}/>
+      <Words display={display} getWords={getWords} data={data} />
+
+
 
 
     </div>

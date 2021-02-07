@@ -20,14 +20,21 @@ app.use(express.static('public'));
 app.use(cors())
 
 app.get('/', (req, res) => {
-    //res.sendFile('public/main.html', {root: __dirname});
-    res.send({message: 'we did it!'})
+    //send french data in json
+    let scrape = scraper.scrapeWords();
+    scrape
+      .then((data) => {
+          res.send(data);
+      })
+      .catch((err) => {
+          console.log(err);
+      })
+
 })
 
-app.post('/landing', (req, res) => {
-    res.sendFile('public/scraper.html', {root: __dirname});
+app.get('/hello', (req, res) => {
+    res.send({message: 'why hello!', response: 'how are you?'})
 })
-
 
 app.get('/api/words/:number', (req, res) => {
     console.log(req.params.number);
