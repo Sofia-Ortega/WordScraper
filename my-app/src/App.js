@@ -12,6 +12,7 @@ import Words from './components/Scraper/Words'
 function App() {
   const [display, setDisplay] = React.useState(false);
   const [data, setData] = React.useState('');
+  const [count, setCount] = React.useState(0);
 
   function changeDisplay() {
     setDisplay(!display);
@@ -20,12 +21,15 @@ function App() {
   function getWords() {
     Axios({
       method: "GET",
-      url: "http://localhost:9000/hello",
+      url: "http://localhost:9000/test",
       headers: {
         "Content-Type": "application/json"
       }
     }).then(res => {
-      setData(res.data.message);
+      setData(res.data.french);
+      setCount(count + 1);
+      console.log("Got from database: ", count)
+      console.log(res.data.french);
     });
   }
 
@@ -34,11 +38,8 @@ function App() {
     <div className="App">
       <Header/>
       <Blurb/>
-      <UserInput changeDisplay={changeDisplay}/>
-      <Words display={display} getWords={getWords} data={data} />
-
-
-
+      <UserInput changeDisplay={changeDisplay} getWords={getWords}/>
+      <Words display={display} data={data} />
 
     </div>
   );

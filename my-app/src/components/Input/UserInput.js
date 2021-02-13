@@ -12,7 +12,7 @@ const center = {
 
 }
 
-export default function UserInput({changeDisplay}) {
+export default function UserInput({changeDisplay, getWords}) {
   const [language, setLanguage] = React.useState('');
   const [fileType, setFileType] = React.useState('');
 
@@ -36,7 +36,7 @@ export default function UserInput({changeDisplay}) {
        <Button
          variant="contained"
          color="primary"
-         onClick={() => {getData(); changeDisplay();}}
+         onClick={() => {getData(); getWords(); changeDisplay();}}
          style={center}
        >
          Go!

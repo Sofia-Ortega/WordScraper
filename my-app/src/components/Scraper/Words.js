@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Words({display, getWords, data}) {
+export default function Words({display, data}) {
 
   if(!display){
     return (
@@ -10,11 +10,8 @@ export default function Words({display, getWords, data}) {
     )
   } else {
 
-    getWords();
-
     return (
       <p>{data ? data : 'Please hold'}</p>
-
     )
   }
 }

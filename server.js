@@ -32,8 +32,9 @@ app.get('/', (req, res) => {
 
 })
 
-app.get('/hello', (req, res) => {
-    res.send({message: 'why hello!', response: 'how are you?'})
+app.get('/test', (req, res) => {
+  //send dummy info
+    res.send([{"number":"23","french":"certains","english":"some"},{"number":"24","french":"est","english":"is"},{"number":"25","french":"il","english":"it"}])
 })
 
 app.get('/api/words/:number', (req, res) => {
